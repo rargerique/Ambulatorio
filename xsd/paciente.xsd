@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="paciente" xmlns:ns5="internacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns2="historico" xmlns:ns1="doenca" xmlns:ns4="medico" xmlns:ns3="quarto">
+
+  <xs:import namespace="doenca" schemaLocation="doenca.xsd"/>
+
+  <xs:import namespace="historico" schemaLocation="historico.xsd"/>
+
+  <xs:import namespace="quarto" schemaLocation="quarto.xsd"/>
+
+  <xs:import namespace="medico" schemaLocation="medico.xsd"/>
+
+  <xs:import namespace="internacao" schemaLocation="internacao.xsd"/>
+
+  <xs:complexType name="paciente">
+    <xs:sequence>
+      <xs:element name="doadorOrgaos" type="xs:boolean"/>
+      <xs:element name="historicoMedico" type="ns2:historicoMedico" minOccurs="0"/>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="idade" type="xs:int"/>
+      <xs:element name="internacao" type="ns5:internacao" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="telefoneContato" type="xs:string" minOccurs="0"/>
+      <xs:element name="tipoSanguineo" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="historico" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="doenca">
+
+
+  <xs:import namespace="doenca" schemaLocation="doenca.xsd"/>
+
+  <xs:complexType name="historicoMedico">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="doencas" type="ns1:doenca" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

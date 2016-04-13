@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="internacao" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns2="medico" xmlns:ns1="quarto">
+
+  <xs:import namespace="quarto" schemaLocation="quarto.xsd"/>
+  <xs:import namespace="medico" schemaLocation="medico.xsd"/>
+
+  <xs:complexType name="internacao">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="quarto" type="ns1:quarto" minOccurs="0"/>
+      <xs:element name="medico" type="ns2:medico" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
