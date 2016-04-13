@@ -1,7 +1,6 @@
 package br.com.model;
 
 import java.io.Serializable;
-import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -49,6 +47,11 @@ public class Doenca implements Serializable {
 
 	public void setHistoricoMedico(HistoricoMedico historicoMedico) {
 		this.historicoMedico = historicoMedico;
+	}
+
+	@Override
+	public String toString() {
+		return "Doenca [nome=" + nome + "]";
 	}
 
 }

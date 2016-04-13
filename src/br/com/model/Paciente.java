@@ -1,12 +1,14 @@
 package br.com.model;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -34,8 +36,11 @@ public class Paciente implements Serializable {
 	@Column(length = 50, nullable = true)
 	private String tipoSanguineo;
 	
-	@OneToOne(mappedBy = "paciente", optional = true)
+	@OneToOne(optional = true)
 	private HistoricoMedico historicoMedico;
+	
+	@OneToMany
+	private Collection<Internacao> internacao;
 	
 	public Paciente() {}
 	
@@ -97,6 +102,24 @@ public class Paciente implements Serializable {
 
 	public void setHistoricoMedico(HistoricoMedico historicoMedico) {
 		this.historicoMedico = historicoMedico;
+	}
+
+	public Collection<Internacao> getInternacao() {
+		return internacao;
+	}
+
+	public void setInternacao(Collection<Internacao> internacao) {
+		this.internacao = internacao;
+	}
+
+	@Override
+	public String toString() {
+		return "Paciente [nome=" + nome + ", idade=" + idade
+				+ ", telefoneContato=" + telefoneContato + ", doadorOrgaos="
+				+ doadorOrgaos + ", tipoSanguineo=" + tipoSanguineo
+				+ ", historicoMedico=" + historicoMedico + ", internacao="
+				+ internacao + "]";
 	}	
+	
 
 }

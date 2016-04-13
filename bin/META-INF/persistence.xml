@@ -3,6 +3,11 @@
 <persistence-unit name="BD2" transaction-type="RESOURCE_LOCAL">
 <provider>org.hibernate.ejb.HibernatePersistence</provider>
 	<class>br.com.model.Paciente</class>
+	<class>br.com.model.HistoricoMedico</class>
+	<class>br.com.model.Internacao</class>
+	<class>br.com.model.Medico</class>
+	<class>br.com.model.Quarto</class>
+	<class>br.com.model.Doenca</class>
 
     <properties>
 		<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/BD2" />
@@ -10,7 +15,7 @@
 		<property name="hibernate.connection.password" value="bd2" />
         <property name="hibernate.connection.username" value="bd2" />
         <property name="hibernate.max_fetch_depth" value="2" />
-        <property name="hibernate.show_sql" value="true" />
+        <property name="hibernate.show_sql" value="false" />
         <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 	</properties>         
 </persistence-unit>
